@@ -5,8 +5,9 @@ from articles_batch1 import ARTICLES_BATCH1
 from articles_batch2 import ARTICLES_BATCH2
 from articles_batch3 import ARTICLES_BATCH3
 from articles_batch4 import ARTICLES_BATCH4
+from articles_batch5 import ARTICLES_BATCH5
 
-ARTICLES = ARTICLES_BATCH1 + ARTICLES_BATCH2 + ARTICLES_BATCH3 + ARTICLES_BATCH4
+ARTICLES = ARTICLES_BATCH1 + ARTICLES_BATCH2 + ARTICLES_BATCH3 + ARTICLES_BATCH4 + ARTICLES_BATCH5
 
 ROOT = Path(__file__).parent
 

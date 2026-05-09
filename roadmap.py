@@ -30,13 +30,13 @@ ROADMAP = [
     {"ep": "EP019", "part": "I", "title": "後継者問題と能の伝承", "lens1": "芸能史", "lens2": "進化生物学", "status": "draft"},
     {"ep": "EP020", "part": "I", "title": "コモンズの経営", "lens1": "政治哲学", "lens2": "生態学", "status": "draft"},
     {"ep": "EP021", "part": "I", "title": "距離をどう保つか", "lens1": "文化人類学", "lens2": "愛着理論", "status": "draft"},
-    {"ep": "EP022", "part": "I", "title": "沈黙のマネジメント", "lens1": "比較宗教学", "lens2": "認知科学", "status": "planned"},
-    {"ep": "EP023", "part": "I", "title": "終わりの設計", "lens1": "死生学", "lens2": "ハイデガー哲学", "status": "planned"},
+    {"ep": "EP022", "part": "I", "title": "沈黙のマネジメント", "lens1": "比較宗教学", "lens2": "認知科学", "status": "draft"},
+    {"ep": "EP023", "part": "I", "title": "終わりの設計", "lens1": "死生学", "lens2": "ハイデガー哲学", "status": "draft"},
 
     # PART II ファイナンス
-    {"ep": "EP024", "part": "II", "title": "利子の起源", "lens1": "経済史", "lens2": "比較宗教学", "status": "planned"},
-    {"ep": "EP025", "part": "II", "title": "投資判断と狩猟採集", "lens1": "進化心理学", "lens2": "行動経済学", "status": "planned"},
-    {"ep": "EP026", "part": "II", "title": "リスクは身体で感じる", "lens1": "生理学", "lens2": "実存哲学", "status": "planned"},
+    {"ep": "EP024", "part": "II", "title": "利子の起源", "lens1": "経済史", "lens2": "比較宗教学", "status": "draft"},
+    {"ep": "EP025", "part": "II", "title": "投資判断と狩猟採集", "lens1": "進化心理学", "lens2": "行動経済学", "status": "draft"},
+    {"ep": "EP026", "part": "II", "title": "リスクは身体で感じる", "lens1": "生理学", "lens2": "実存哲学", "status": "draft"},
     {"ep": "EP027", "part": "II", "title": "バランスシートの哲学", "lens1": "数学史", "lens2": "構造主義", "status": "planned"},
     {"ep": "EP028", "part": "II", "title": "通貨は贈与から生まれた", "lens1": "経済人類学", "lens2": "言語学", "status": "planned"},
     {"ep": "EP029", "part": "II", "title": "流動性と河川", "lens1": "水文学", "lens2": "古代ギリシア哲学", "status": "planned"},
