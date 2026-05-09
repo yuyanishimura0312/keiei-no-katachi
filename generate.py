@@ -1,4 +1,4 @@
-"""generate.py — 各話のHTMLを生成する"""
+"""generate.py — 各話のHTMLを生成する（kurashi-no-katachi構造に準拠）"""
 
 from pathlib import Path
 from articles_batch1 import ARTICLES_BATCH1
@@ -22,7 +22,12 @@ from articles_batch18 import ARTICLES_BATCH18
 from articles_batch19 import ARTICLES_BATCH19
 from articles_batch20 import ARTICLES_BATCH20
 
-ARTICLES = ARTICLES_BATCH1 + ARTICLES_BATCH2 + ARTICLES_BATCH3 + ARTICLES_BATCH4 + ARTICLES_BATCH5 + ARTICLES_BATCH6 + ARTICLES_BATCH7 + ARTICLES_BATCH8 + ARTICLES_BATCH9 + ARTICLES_BATCH10 + ARTICLES_BATCH11 + ARTICLES_BATCH12 + ARTICLES_BATCH13 + ARTICLES_BATCH14 + ARTICLES_BATCH15 + ARTICLES_BATCH16 + ARTICLES_BATCH17 + ARTICLES_BATCH18 + ARTICLES_BATCH19 + ARTICLES_BATCH20
+ARTICLES = (
+    ARTICLES_BATCH1 + ARTICLES_BATCH2 + ARTICLES_BATCH3 + ARTICLES_BATCH4 + ARTICLES_BATCH5
+    + ARTICLES_BATCH6 + ARTICLES_BATCH7 + ARTICLES_BATCH8 + ARTICLES_BATCH9 + ARTICLES_BATCH10
+    + ARTICLES_BATCH11 + ARTICLES_BATCH12 + ARTICLES_BATCH13 + ARTICLES_BATCH14 + ARTICLES_BATCH15
+    + ARTICLES_BATCH16 + ARTICLES_BATCH17 + ARTICLES_BATCH18 + ARTICLES_BATCH19 + ARTICLES_BATCH20
+)
 
 ROOT = Path(__file__).parent
 
@@ -47,14 +52,19 @@ EP_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
 
+<div class="read-progress" aria-hidden="true"><div class="read-progress-bar" id="readProgressBar"></div></div>
+
+<div class="site-header-strip"></div>
 <header class="site-header">
   <div class="site-header-inner">
     <a href="index.html" class="site-brand">
+      <div class="site-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
       <div class="site-brand-text">経営のかたち<small>KEIEI NO KATACHI / 他分野が経営の機能に出会うとき</small></div>
     </a>
     <nav class="site-nav">
       <a href="index.html">ホーム</a>
       <a href="articles.html">全100話</a>
+      <a href="#newsletter">メルマガ</a>
     </nav>
   </div>
 </header>
@@ -70,7 +80,7 @@ EP_TEMPLATE = """<!DOCTYPE html>
     <div class="ep-hero-meta">
       <span class="ep-hero-author"><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
       <span class="ep-hero-date">2026年5月9日</span>
-      <span class="read-time">推定読了 {read_time}</span>
+      <span class="read-time" id="readTime">推定読了 {read_time}</span>
       <span style="color: var(--ink-mute);">学術領域: {domain}</span>
     </div>
   </div>
@@ -154,6 +164,14 @@ EP_TEMPLATE = """<!DOCTYPE html>
   </article>
 </div>
 
+<section class="ep-actions" aria-label="読了後アクション">
+  <div class="ep-actions-inner">
+    <a class="ep-action-btn primary" href="#newsletter">メルマガで次話を受け取る</a>
+    <a class="ep-action-btn" href="#comments">この話に感想を送る</a>
+    <a class="ep-action-btn" href="articles.html">全100話の地図へ</a>
+  </div>
+</section>
+
 <nav class="ep-nav">
   <div class="ep-nav-inner">
     {prev_html}
@@ -161,20 +179,90 @@ EP_TEMPLATE = """<!DOCTYPE html>
   </div>
 </nav>
 
-<section class="disclaimer">
-  <div class="disclaimer-inner">
-    本連載で紹介する研究内容は2025年時点までの公表知見に基づくもので、その後の研究で更新される可能性があります。引用した数値・効果は集団傾向であり、個別の経営判断における結果を保証するものではありません。実務への適用は、組織の文脈に応じてご検討ください。
+<section class="feedback-section" id="comments">
+  <div class="feedback-inner">
+    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
+    <h2 class="feedback-title">この話に感想を送る</h2>
+    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
+    <form class="feedback-form" id="fbForm" onsubmit="return false;">
+      <div class="feedback-field">
+        <label for="fbSuggestion">コメント <span style="color:var(--accent);">*</span></label>
+        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
+      </div>
+      <div class="feedback-row">
+        <div class="feedback-field"><label for="fbName">お名前（任意）</label><input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません"></div>
+        <div class="feedback-field"><label for="fbEmail">メール（任意・返信が必要なときのみ）</label><input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で"></div>
+      </div>
+      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
+    </form>
+    <div class="feedback-done" id="fbDone">ありがとうございました。コメントを受け取りました。</div>
+  </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-eyebrow">EMERGING FUTURE NEWSLETTER</div>
+    <h2 class="newsletter-title">新しい話の公開を、まずメールで。</h2>
+    <p class="newsletter-desc">本連載「経営のかたち」の更新通知、ミラツクの未来洞察・学術翻訳の最新情報をお届けします。配信停止はいつでも可能です。</p>
+    <form class="nl-form" id="nlForm" onsubmit="return false;">
+      <div class="nl-step active" id="nlStep1">
+        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
+        <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
+        <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
+      </div>
+      <div class="nl-step" id="nlStep2">
+        <div class="nl-row">
+          <div class="nl-field"><input type="text" id="nlName" placeholder="お名前" autocomplete="name"></div>
+          <div class="nl-field"><input type="text" id="nlOrg" placeholder="所属（任意）" autocomplete="organization"></div>
+        </div>
+        <label class="nl-consent"><input type="checkbox" id="nlConsent" checked> メールマガジン配信に同意します。配信停止はいつでも可能です。</label>
+        <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
+      </div>
+    </form>
+    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「経営のかたち」を読み解いていきましょう。</div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <div class="site-footer-cols">
+      <div class="site-footer-col">
+        <h4>ABOUT</h4>
+        <p><strong>経営のかたち ― 他分野が経営の機能に出会うとき</strong></p>
+        <p style="margin-top:8px;color:var(--ink-mute);">経営の主要5機能（マネジメント・ファイナンス・マーケティング・事業開発・営業販売）を、他分野の研究知で読み直す全100話連載。NPO法人ミラツク代表理事・西村勇也。</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="#newsletter">メルマガ登録</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h4>MIRA TUKU</h4>
+        <ul>
+          <li><a href="https://emerging-future.org/" target="_blank" rel="noopener">emerging-future.org</a></li>
+          <li><a href="https://github.com/yuyanishimura0312/keiei-no-katachi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-disclaimer" style="padding: 24px 0; border-top: 1px solid var(--line); font-family: var(--serif); font-size: 12.5px; line-height: 1.95; color: var(--ink-mute); letter-spacing: 0.04em;">
+      <p style="margin-bottom: 6px;"><strong style="color: var(--ink-soft);">本連載の利用について</strong></p>
+      <p>本連載で紹介する研究内容は2025年時点までの公表知見に基づくもので、その後の研究で更新される可能性があります。引用した数値・効果は集団傾向であり、個別の経営判断における結果を保証するものではありません。実務への適用は、組織の文脈に応じてご検討ください。研究の存在・年代・著者は実在検証を行っていますが、解釈や要約に誤りを発見された場合はコメント欄からご指摘ください。</p>
+    </div>
     <div class="site-footer-bottom">
-      <span>© NPO法人ミラツク / 経営のかたち</span>
-      <span>2026 — 100話連載</span>
+      <span>© 2026 NPO法人ミラツク</span>
+      <span>経営のかたち ― 他分野が経営の機能に出会うとき</span>
     </div>
   </div>
 </footer>
+
+<script src="script.js"></script>
+<script>
+const EPISODE_ID = '{ep_lower}';
+const EPISODE_TITLE = '第{ep_num_int}話 ― {title_main}';
+</script>
 
 </body>
 </html>
@@ -221,7 +309,7 @@ def render_nav(prev_article, next_article):
     else:
         next_html = '''<a class="ep-nav-link next disabled" href="#" aria-disabled="true">
       <span class="ep-nav-label">NEXT →</span>
-      <span class="ep-nav-title">― 公開予定 ―</span>
+      <span class="ep-nav-title">― 連載完結 ―</span>
     </a>'''
 
     return prev_html, next_html
@@ -238,7 +326,6 @@ def main():
 
         prev_html, next_html = render_nav(prev_article, next_article)
 
-        # next_ep_int handling - even when next_article is None, we still have next_ep in data
         try:
             next_ep_int = int(article["next_ep"][2:])
         except (KeyError, ValueError):
@@ -269,9 +356,8 @@ def main():
 
         out_path = ROOT / f"{ep_lower}.html"
         out_path.write_text(html, encoding="utf-8")
-        print(f"  generated: {out_path.name}")
 
-    print(f"\nTotal: {len(ARTICLES)} HTML files")
+    print(f"Total: {len(ARTICLES)} HTML files generated")
 
 
 if __name__ == "__main__":

@@ -3,216 +3,1206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全100話 | 経営のかたち</title>
+<title>全100話 ロードマップ | 経営のかたち</title>
+<meta name="description" content="連載「経営のかたち」全100話の地図。序章5話・PART I-V各18話・終章5話の構成。">
+<meta property="og:title" content="全100話 ロードマップ | 経営のかたち">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/keiei-no-katachi/articles.html">
 <link rel="icon" href="https://esse-sense.com/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.articles-hero { background: var(--bg); padding: 64px 24px 32px; border-bottom: 1px solid var(--line); text-align: center; }
-.articles-hero h1 { font-family: var(--serif); font-size: 28px; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 12px; }
-.articles-hero p { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); max-width: 640px; margin: 0 auto; line-height: 1.95; }
-.progress { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; color: var(--accent); margin-top: 24px; }
-.articles-main { max-width: 860px; margin: 0 auto; padding: 56px 24px 80px; }
-.part-section { margin-bottom: 56px; }
-.part-title { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid var(--ink); margin-bottom: 6px; }
-.part-desc { font-family: var(--serif); font-size: 14px; color: var(--ink-soft); margin-bottom: 22px; letter-spacing: 0.04em; }
-.ep-list { list-style: none; padding: 0; }
-.ep-row { padding: 14px 0; border-bottom: 1px solid var(--line-soft); display: block; }
-.ep-row a { display: grid; grid-template-columns: 80px 1fr; gap: 18px; align-items: baseline; text-decoration: none; }
-.ep-row.planned { display: grid; grid-template-columns: 80px 1fr auto; gap: 18px; align-items: baseline; opacity: 0.55; }
-.ep-row-num { font-family: var(--sans); font-size: 11px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; }
-.ep-row-title { font-family: var(--serif); font-size: 15.5px; color: var(--ink); letter-spacing: 0.04em; line-height: 1.7; font-weight: 600; }
-.ep-row.planned .ep-row-title { font-weight: 500; }
-.ep-row-lens { display: block; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); margin-top: 4px; letter-spacing: 0.04em; }
-.ep-row-status { font-family: var(--sans); font-size: 10.5px; color: var(--ink-mute); letter-spacing: 0.12em; }
-.ep-row.published a:hover .ep-row-title { color: var(--accent); }
+.page-banner { background: var(--bg); padding: 80px 24px 48px; border-bottom: 1px solid var(--line); }
+.page-banner-inner { max-width: 1080px; margin: 0 auto; }
+.page-banner-eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.page-banner-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--accent); }
+.page-banner-title { font-family: var(--serif); font-weight: 700; font-size: 40px; line-height: 1.45; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 14px; }
+.page-banner-en { font-family: var(--display); font-weight: 400; font-size: 20px; color: var(--ink-mute); margin-bottom: 32px; }
+.page-stats { display: grid; grid-template-columns: repeat(4, auto); gap: 32px; align-items: baseline; padding-top: 24px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-mute); }
+.page-stats span { display: flex; flex-direction: column; gap: 4px; }
+.page-stats span strong { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--ink); letter-spacing: 0; }
+
+.series-progress { max-width: 1080px; margin: 32px auto 0; padding: 0 24px; }
+.series-progress-bar-wrap { background: var(--bg-tint); height: 6px; position: relative; overflow: hidden; }
+.series-progress-bar-fill { background: var(--accent); height: 100%; width: 26%; }
+.series-progress-meta { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; font-family: var(--sans); font-size: 10.5px; color: var(--ink-mute); letter-spacing: 0.14em; }
+.series-progress-meta strong { color: var(--ink); font-weight: 700; }
+
+.parts-jump { max-width: 1080px; margin: 56px auto 0; padding: 0 24px; }
+.parts-jump-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em; color: var(--accent); margin-bottom: 14px; }
+.parts-jump-title { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--ink); margin-bottom: 24px; }
+.parts-jump-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.part-jump-card { background: var(--bg); border: 1px solid var(--line); padding: 22px 20px; text-decoration: none; display: flex; flex-direction: column; gap: 8px; transition: border-color .15s, transform .15s; }
+.part-jump-card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.part-jump-num { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--accent); line-height: 1; }
+.part-jump-name { font-family: var(--serif); font-weight: 700; font-size: 15px; color: var(--ink); line-height: 1.55; }
+.part-jump-sub { font-family: var(--sans); font-size: 10.5px; color: var(--ink-mute); line-height: 1.65; }
+
+.content-main { max-width: 1080px; margin: 64px auto 0; padding: 0 24px 80px; }
+
+.part-section { margin-bottom: 80px; }
+.part-section:last-child { margin-bottom: 0; }
+.part-header { padding-bottom: 24px; border-bottom: 2px solid var(--ink); margin-bottom: 32px; }
+.part-label { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); margin-bottom: 12px; }
+.part-title { font-family: var(--serif); font-weight: 700; font-size: 26px; color: var(--ink); letter-spacing: 0.04em; margin-bottom: 8px; }
+.part-tagline { font-family: var(--serif); font-size: 14px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 16px; }
+.part-stats { font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; color: var(--ink-mute); }
+
+.ep-list { display: flex; flex-direction: column; gap: 0; }
+.ep-item { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line-soft); text-decoration: none; transition: background .15s; }
+.ep-item:hover { background: var(--bg-soft); text-decoration: none; }
+.ep-item.planned { opacity: 0.66; }
+.ep-item-num { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--accent); line-height: 1; }
+.ep-item-num-total { font-family: var(--sans); font-size: 10px; color: var(--ink-mute); margin-left: 2px; letter-spacing: 0.06em; }
+.ep-item-body { display: flex; flex-direction: column; gap: 6px; }
+.ep-item-eyebrow { font-family: var(--sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; }
+.ep-item-title { font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--ink); line-height: 1.55; letter-spacing: 0.04em; }
+.ep-item-sub { font-family: var(--serif); font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; letter-spacing: 0.04em; }
+.ep-item-meta { display: flex; align-items: center; gap: 14px; margin-top: 4px; font-family: var(--sans); font-size: 10.5px; color: var(--ink-mute); letter-spacing: 0.08em; }
+.ep-badge { display: inline-block; padding: 3px 10px; font-family: var(--sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.16em; border: 1px solid var(--line); }
+.ep-badge.published { color: var(--accent); border-color: var(--accent); }
+.ep-badge.planned { color: var(--ink-mute); border-color: var(--ink-mute); }
+
+@media (max-width: 760px) {
+  .page-banner-title { font-size: 28px; }
+  .page-stats { grid-template-columns: repeat(2, auto); gap: 18px; }
+  .ep-item { grid-template-columns: 1fr; gap: 8px; }
+  .ep-item-title { font-size: 15px; }
+}
 </style>
 </head>
 <body>
 
+<div class="site-header-strip"></div>
 <header class="site-header">
   <div class="site-header-inner">
     <a href="index.html" class="site-brand">
+      <div class="site-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
       <div class="site-brand-text">経営のかたち<small>KEIEI NO KATACHI / 他分野が経営の機能に出会うとき</small></div>
     </a>
     <nav class="site-nav">
       <a href="index.html">ホーム</a>
       <a href="articles.html" class="active">全100話</a>
+      <a href="index.html#newsletter">メルマガ</a>
     </nav>
   </div>
 </header>
 
-<section class="articles-hero">
-  <h1>全100話の地図</h1>
-  <p>5つの経営機能を他分野の研究知で読み直す100話。各話に2つのレンズを置き、本文と DEEPER の両方から、経営の機能を別の学問の言葉で照らします。</p>
-  <div class="progress">公開: 26/100話 (26%)</div>
-</section>
-
-<main class="articles-main">
-
-      <section class="part-section" id="prologue">
-        <h2 class="part-title">PROLOGUE — 序 章</h2>
-        <p class="part-desc">経営機能を他分野で読む</p>
-        <ul class="ep-list">
-<li class="ep-row published"><a href="ep001.html"><span class="ep-row-num">第1話</span><span class="ep-row-title">経営機能を「他分野で読む」とは</span><span class="ep-row-lens">経営学史 × 翻訳論</span></a></li>
-<li class="ep-row published"><a href="ep002.html"><span class="ep-row-num">第2話</span><span class="ep-row-title">経営学だけでは届かない領域</span><span class="ep-row-lens">知識社会学 × 学際研究方法論</span></a></li>
-<li class="ep-row published"><a href="ep003.html"><span class="ep-row-num">第3話</span><span class="ep-row-title">5機能と他分野マップ</span><span class="ep-row-lens">機能主義経営論 × タクソノミー論</span></a></li>
-<li class="ep-row published"><a href="ep004.html"><span class="ep-row-num">第4話</span><span class="ep-row-title">ベストプラクティスの限界</span><span class="ep-row-lens">経営理論批判 × 暗黙知論</span></a></li>
-<li class="ep-row published"><a href="ep005.html"><span class="ep-row-num">第5話</span><span class="ep-row-title">翻訳という方法論</span><span class="ep-row-lens">Translational Science × 哲学的解釈学</span></a></li>
-        </ul>
-      </section>
-
-      <section class="part-section" id="part-i">
-        <h2 class="part-title">PART I — マネジメント</h2>
-        <p class="part-desc">統率・組織・継承</p>
-        <ul class="ep-list">
-<li class="ep-row published"><a href="ep006.html"><span class="ep-row-num">第6話</span><span class="ep-row-title">リーダーシップは贈与の連鎖だった</span><span class="ep-row-lens">経済人類学 × 神経科学</span></a></li>
-<li class="ep-row published"><a href="ep007.html"><span class="ep-row-num">第7話</span><span class="ep-row-title">組織の血液循環</span><span class="ep-row-lens">細胞生物学 × ネットワーク科学</span></a></li>
-<li class="ep-row published"><a href="ep008.html"><span class="ep-row-num">第8話</span><span class="ep-row-title">撤退戦の哲学</span><span class="ep-row-lens">老荘思想 × ゲーム理論</span></a></li>
-<li class="ep-row published"><a href="ep009.html"><span class="ep-row-num">第9話</span><span class="ep-row-title">暗黙知は儀礼で渡される</span><span class="ep-row-lens">知識論 × 認知言語学</span></a></li>
-<li class="ep-row published"><a href="ep010.html"><span class="ep-row-num">第10話</span><span class="ep-row-title">群れの動きと組織行動</span><span class="ep-row-lens">動物行動学 × 群知能</span></a></li>
-<li class="ep-row published"><a href="ep011.html"><span class="ep-row-num">第11話</span><span class="ep-row-title">意思決定する身体</span><span class="ep-row-lens">神経科学 × 哲学</span></a></li>
-<li class="ep-row published"><a href="ep012.html"><span class="ep-row-num">第12話</span><span class="ep-row-title">オフィスは記憶の容器</span><span class="ep-row-lens">環境心理学 × 古代修辞学</span></a></li>
-<li class="ep-row published"><a href="ep013.html"><span class="ep-row-num">第13話</span><span class="ep-row-title">働き方の歴史</span><span class="ep-row-lens">経済史 × 時間人類学</span></a></li>
-<li class="ep-row published"><a href="ep014.html"><span class="ep-row-num">第14話</span><span class="ep-row-title">評価制度と公正世界仮説</span><span class="ep-row-lens">社会心理学 × 政治哲学</span></a></li>
-<li class="ep-row published"><a href="ep015.html"><span class="ep-row-num">第15話</span><span class="ep-row-title">多様性と生態系の安定</span><span class="ep-row-lens">生態学 × 複雑系</span></a></li>
-<li class="ep-row published"><a href="ep016.html"><span class="ep-row-num">第16話</span><span class="ep-row-title">組織変革は相転移する</span><span class="ep-row-lens">複雑系物理学 × 縁起観</span></a></li>
-<li class="ep-row published"><a href="ep017.html"><span class="ep-row-num">第17話</span><span class="ep-row-title">失敗の儀礼</span><span class="ep-row-lens">文化人類学 × ナラティブ療法</span></a></li>
-<li class="ep-row published"><a href="ep018.html"><span class="ep-row-num">第18話</span><span class="ep-row-title">創造性と即興演劇</span><span class="ep-row-lens">演劇研究 × 認知心理学</span></a></li>
-<li class="ep-row published"><a href="ep019.html"><span class="ep-row-num">第19話</span><span class="ep-row-title">後継者問題と能の伝承</span><span class="ep-row-lens">芸能史 × 進化生物学</span></a></li>
-<li class="ep-row published"><a href="ep020.html"><span class="ep-row-num">第20話</span><span class="ep-row-title">コモンズの経営</span><span class="ep-row-lens">政治哲学 × 生態学</span></a></li>
-<li class="ep-row published"><a href="ep021.html"><span class="ep-row-num">第21話</span><span class="ep-row-title">距離をどう保つか</span><span class="ep-row-lens">文化人類学 × 愛着理論</span></a></li>
-<li class="ep-row published"><a href="ep022.html"><span class="ep-row-num">第22話</span><span class="ep-row-title">沈黙のマネジメント</span><span class="ep-row-lens">比較宗教学 × 認知科学</span></a></li>
-<li class="ep-row published"><a href="ep023.html"><span class="ep-row-num">第23話</span><span class="ep-row-title">終わりの設計</span><span class="ep-row-lens">死生学 × ハイデガー哲学</span></a></li>
-        </ul>
-      </section>
-
-      <section class="part-section" id="part-ii">
-        <h2 class="part-title">PART II — ファイナンス</h2>
-        <p class="part-desc">利子・通貨・リスク</p>
-        <ul class="ep-list">
-<li class="ep-row published"><a href="ep024.html"><span class="ep-row-num">第24話</span><span class="ep-row-title">利子の起源</span><span class="ep-row-lens">経済史 × 比較宗教学</span></a></li>
-<li class="ep-row published"><a href="ep025.html"><span class="ep-row-num">第25話</span><span class="ep-row-title">投資判断と狩猟採集</span><span class="ep-row-lens">進化心理学 × 行動経済学</span></a></li>
-<li class="ep-row published"><a href="ep026.html"><span class="ep-row-num">第26話</span><span class="ep-row-title">リスクは身体で感じる</span><span class="ep-row-lens">生理学 × 実存哲学</span></a></li>
-<li class="ep-row planned"><span class="ep-row-num">第27話</span><span class="ep-row-title">バランスシートの哲学</span><span class="ep-row-lens">数学史 × 構造主義</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第28話</span><span class="ep-row-title">通貨は贈与から生まれた</span><span class="ep-row-lens">経済人類学 × 言語学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第29話</span><span class="ep-row-title">流動性と河川</span><span class="ep-row-lens">水文学 × 古代ギリシア哲学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第30話</span><span class="ep-row-title">バブルと群衆</span><span class="ep-row-lens">社会心理学 × ジラール</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第31話</span><span class="ep-row-title">資本コストと時間哲学</span><span class="ep-row-lens">ベルクソン × 熱力学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第32話</span><span class="ep-row-title">損切りの神経科学</span><span class="ep-row-lens">プロスペクト理論 × ストア派</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第33話</span><span class="ep-row-title">為替と境界の人類学</span><span class="ep-row-lens">国境研究 × 言語学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第34話</span><span class="ep-row-title">ESG投資の倫理学</span><span class="ep-row-lens">環境哲学 × 先住民研究</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第35話</span><span class="ep-row-title">企業価値は物語である</span><span class="ep-row-lens">ナラティブ経済学 × ナラトロジー</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第36話</span><span class="ep-row-title">資本市場の神話</span><span class="ep-row-lens">神話論 × ユング心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第37話</span><span class="ep-row-title">配当と種子</span><span class="ep-row-lens">農学 × 進化遺伝学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第38話</span><span class="ep-row-title">暗号通貨と信頼</span><span class="ep-row-lens">ルーマン社会学 × ゲーム理論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第39話</span><span class="ep-row-title">相続の民俗学</span><span class="ep-row-lens">民俗学 × デュメジル神話学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第40話</span><span class="ep-row-title">余剰の使い方</span><span class="ep-row-lens">経済人類学 × バタイユ</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第41話</span><span class="ep-row-title">仏教経済学</span><span class="ep-row-lens">思想史 × 脱成長論</span><span class="ep-row-status">— 公開予定</span></li>
-        </ul>
-      </section>
-
-      <section class="part-section" id="part-iii">
-        <h2 class="part-title">PART III — マーケティング</h2>
-        <p class="part-desc">物語・記号・神話</p>
-        <ul class="ep-list">
-<li class="ep-row planned"><span class="ep-row-num">第42話</span><span class="ep-row-title">ブランドは現代の神話</span><span class="ep-row-lens">比較神話学 × 記号学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第43話</span><span class="ep-row-title">価格は知覚される</span><span class="ep-row-lens">心理物理学 × 神経経済学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第44話</span><span class="ep-row-title">物語の構造とマーケティング</span><span class="ep-row-lens">ナラトロジー × 認知言語学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第45話</span><span class="ep-row-title">共感の神経科学</span><span class="ep-row-lens">ミラーニューロン × 現象学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第46話</span><span class="ep-row-title">パッケージは記号である</span><span class="ep-row-lens">記号論 × 美学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第47話</span><span class="ep-row-title">口コミは都市伝説</span><span class="ep-row-lens">民俗学 × 進化生物学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第48話</span><span class="ep-row-title">顧客体験の現象学</span><span class="ep-row-lens">メルロ＝ポンティ × 体験経済論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第49話</span><span class="ep-row-title">色彩と認知</span><span class="ep-row-lens">色彩心理学 × 文化人類学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第50話</span><span class="ep-row-title">店舗の音楽</span><span class="ep-row-lens">環境音響学 × 音楽人類学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第51話</span><span class="ep-row-title">ヴィジュアル人類学とブランド</span><span class="ep-row-lens">写真人類学 × パース記号学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第52話</span><span class="ep-row-title">インフルエンサーは現代の祭司</span><span class="ep-row-lens">宗教社会学 × ウェーバー</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第53話</span><span class="ep-row-title">レビュー文化と告解</span><span class="ep-row-lens">フーコー × ゴッフマン</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第54話</span><span class="ep-row-title">ノスタルジアの記憶研究</span><span class="ep-row-lens">自伝的記憶 × プルースト的記憶論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第55話</span><span class="ep-row-title">ロゴと紋章学</span><span class="ep-row-lens">中世史 × パース記号学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第56話</span><span class="ep-row-title">キャンペーンは儀礼である</span><span class="ep-row-lens">文化人類学 × 演劇論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第57話</span><span class="ep-row-title">別れの作法</span><span class="ep-row-lens">文化人類学 × 心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第58話</span><span class="ep-row-title">ブランド再生と神話の更新</span><span class="ep-row-lens">神話論 × 文学理論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第59話</span><span class="ep-row-title">集合無意識とマーケティング</span><span class="ep-row-lens">ユング × 認知科学</span><span class="ep-row-status">— 公開予定</span></li>
-        </ul>
-      </section>
-
-      <section class="part-section" id="part-iv">
-        <h2 class="part-title">PART IV — 事業開発</h2>
-        <p class="part-desc">適応・共創・撤退</p>
-        <ul class="ep-list">
-<li class="ep-row planned"><span class="ep-row-num">第60話</span><span class="ep-row-title">ピボットと進化生物学</span><span class="ep-row-lens">進化生物学 × 中国兵法</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第61話</span><span class="ep-row-title">共創とコモンズ</span><span class="ep-row-lens">政治哲学 × 進化人類学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第62話</span><span class="ep-row-title">起業家精神と冒険の構造</span><span class="ep-row-lens">神話学 × 心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第63話</span><span class="ep-row-title">アクセラレーターと孵化</span><span class="ep-row-lens">発生学 × 文化人類学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第64話</span><span class="ep-row-title">オープンイノベーションと菌糸体</span><span class="ep-row-lens">菌類学 × ネットワーク科学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第65話</span><span class="ep-row-title">M&Aの結婚人類学</span><span class="ep-row-lens">婚姻儀礼研究 × 心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第66話</span><span class="ep-row-title">提携と外交史</span><span class="ep-row-lens">国際関係史 × ゲーム理論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第67話</span><span class="ep-row-title">撤退の生態学</span><span class="ep-row-lens">個体数調整 × 軍事戦略</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第68話</span><span class="ep-row-title">新規事業と母体</span><span class="ep-row-lens">発生生物学 × 経営学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第69話</span><span class="ep-row-title">試行錯誤の前史</span><span class="ep-row-lens">19世紀科学史 × プラグマティズム</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第70話</span><span class="ep-row-title">プロトタイプは演劇である</span><span class="ep-row-lens">スタニスラフスキー × 認知科学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第71話</span><span class="ep-row-title">シーズと農学</span><span class="ep-row-lens">育種学 × 民俗学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第72話</span><span class="ep-row-title">仮説検証の科学哲学</span><span class="ep-row-lens">ポパー × ベイズ統計</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第73話</span><span class="ep-row-title">顧客発見はフィールドワーク</span><span class="ep-row-lens">文化人類学 × 現象学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第74話</span><span class="ep-row-title">ユニットエコノミクスと血流</span><span class="ep-row-lens">循環器学 × 生態学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第75話</span><span class="ep-row-title">アライアンスと縄張り</span><span class="ep-row-lens">動物行動学 × 経済学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第76話</span><span class="ep-row-title">ステージゲートと通過儀礼</span><span class="ep-row-lens">文化人類学 × 発達心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第77話</span><span class="ep-row-title">事業の終末期医療</span><span class="ep-row-lens">死生学 × 医療人類学</span><span class="ep-row-status">— 公開予定</span></li>
-        </ul>
-      </section>
-
-      <section class="part-section" id="part-v">
-        <h2 class="part-title">PART V — 営業・販売</h2>
-        <p class="part-desc">弁論・関係・儀礼</p>
-        <ul class="ep-list">
-<li class="ep-row planned"><span class="ep-row-num">第78話</span><span class="ep-row-title">提案は弁論術である</span><span class="ep-row-lens">アリストテレス修辞学 × 認知心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第79話</span><span class="ep-row-title">クロージングの民俗学</span><span class="ep-row-lens">民俗学 × ゲーム理論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第80話</span><span class="ep-row-title">反論処理の弁証法</span><span class="ep-row-lens">古代ギリシア哲学 × 認知言語学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第81話</span><span class="ep-row-title">質問の技法と精神分析</span><span class="ep-row-lens">ラカン × 教育心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第82話</span><span class="ep-row-title">信頼の長距離交易</span><span class="ep-row-lens">経済人類学 × 進化生物学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第83話</span><span class="ep-row-title">紹介と互酬性</span><span class="ep-row-lens">マリノフスキ × ネットワーク分析</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第84話</span><span class="ep-row-title">オムニチャネルと多声性</span><span class="ep-row-lens">バフチン × 認知科学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第85話</span><span class="ep-row-title">営業同行と徒弟制度</span><span class="ep-row-lens">中世ギルド史 × 状況的学習論</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第86話</span><span class="ep-row-title">テリトリーと縄張り</span><span class="ep-row-lens">エソロジー × 都市計画</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第87話</span><span class="ep-row-title">ロールプレイと演劇技法</span><span class="ep-row-lens">スタニスラフスキー × ゴッフマン</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第88話</span><span class="ep-row-title">CRMと社会的記憶</span><span class="ep-row-lens">アルブヴァクス × 神経科学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第89話</span><span class="ep-row-title">ノルマ文化と贖罪儀礼</span><span class="ep-row-lens">宗教学 × 心理学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第90話</span><span class="ep-row-title">値引きは贈与の変形</span><span class="ep-row-lens">モース贈与論 × 行動経済学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第91話</span><span class="ep-row-title">接待と饗応の人類学</span><span class="ep-row-lens">ホスピタリティ研究 × 比較宗教学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第92話</span><span class="ep-row-title">オンラインセールスの身体性</span><span class="ep-row-lens">現象学 × 認知科学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第93話</span><span class="ep-row-title">名刺と象徴交換</span><span class="ep-row-lens">シンボル人類学 × 中世紋章学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第94話</span><span class="ep-row-title">営業会議は告白室</span><span class="ep-row-lens">フーコー権力論 × 演劇論ブレヒト</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第95話</span><span class="ep-row-title">退職と引き継ぎの儀礼</span><span class="ep-row-lens">通過儀礼 × 経営学</span><span class="ep-row-status">— 公開予定</span></li>
-        </ul>
-      </section>
-
-      <section class="part-section" id="final">
-        <h2 class="part-title">FINAL — 終 章</h2>
-        <p class="part-desc">機能横断の経営論</p>
-        <ul class="ep-list">
-<li class="ep-row planned"><span class="ep-row-num">第96話</span><span class="ep-row-title">機能横断のパターン</span><span class="ep-row-lens">統合論 × システム思考</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第97話</span><span class="ep-row-title">経営者は他分野の翻訳者である</span><span class="ep-row-lens">翻訳論 × SECIモデル</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第98話</span><span class="ep-row-title">機能の死と新たな機能の誕生</span><span class="ep-row-lens">機能進化論 × 技術史</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第99話</span><span class="ep-row-title">AI時代の機能再考</span><span class="ep-row-lens">AI×経営 × ハイデガー哲学</span><span class="ep-row-status">— 公開予定</span></li>
-<li class="ep-row planned"><span class="ep-row-num">第100話</span><span class="ep-row-title">あなた自身の機能論を書く</span><span class="ep-row-lens">メタ × 省察的実践家論</span><span class="ep-row-status">— 公開予定</span></li>
-        </ul>
-      </section>
-</main>
-
-<section class="disclaimer">
-  <div class="disclaimer-inner">
-    本連載で紹介する研究内容は2025年時点までの公表知見に基づくもので、その後の研究で更新される可能性があります。引用した数値・効果は集団傾向であり、個別の経営判断における結果を保証するものではありません。実務への適用は、組織の文脈に応じてご検討ください。
+<section class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-banner-eyebrow">FULL ROADMAP</div>
+    <h1 class="page-banner-title">全100話 ロードマップ</h1>
+    <p class="page-banner-en">The Complete Map — From Management to Academia</p>
+    <div class="page-stats">
+      <span>EPISODES<strong>100</strong></span>
+      <span>PARTS<strong>5</strong></span>
+      <span>FUNCTIONS<strong>5</strong></span>
+      <span>PUBLISHED<strong>26</strong></span>
+    </div>
   </div>
 </section>
 
+<div class="series-progress">
+  <div class="series-progress-bar-wrap"><div class="series-progress-bar-fill"></div></div>
+  <div class="series-progress-meta">
+    <span><strong>26</strong> / 100話 公開済み（26%）</span>
+    <span>v0.5 / 2026年</span>
+  </div>
+</div>
+
+<section class="parts-jump">
+  <div class="parts-jump-label">JUMP TO PART</div>
+  <h2 class="parts-jump-title">5機能 + 序章 + 終章</h2>
+  <div class="parts-jump-grid">
+      <a class="part-jump-card" href="#prologue"><div class="part-jump-num">PROLOGUE</div><div class="part-jump-name">序 章</div><div class="part-jump-sub">翻訳の方法論と連載地図（5話）</div></a>
+      <a class="part-jump-card" href="#part-i"><div class="part-jump-num">PART I</div><div class="part-jump-name">マネジメント</div><div class="part-jump-sub">リーダーシップ・組織変革・後継者問題（18話）</div></a>
+      <a class="part-jump-card" href="#part-ii"><div class="part-jump-num">PART II</div><div class="part-jump-name">ファイナンス</div><div class="part-jump-sub">投資判断・資本コスト・新しい経済学（18話）</div></a>
+      <a class="part-jump-card" href="#part-iii"><div class="part-jump-num">PART III</div><div class="part-jump-name">マーケティング</div><div class="part-jump-sub">ブランド・パッケージ・口コミ・体験（18話）</div></a>
+      <a class="part-jump-card" href="#part-iv"><div class="part-jump-num">PART IV</div><div class="part-jump-name">事業開発</div><div class="part-jump-sub">起業・新規事業・ピボット・終末期（18話）</div></a>
+      <a class="part-jump-card" href="#part-v"><div class="part-jump-num">PART V</div><div class="part-jump-name">営業・販売</div><div class="part-jump-sub">提案・信頼・徒弟・接待・テリトリー（18話）</div></a>
+      <a class="part-jump-card" href="#final"><div class="part-jump-num">FINAL</div><div class="part-jump-name">終 章</div><div class="part-jump-sub">経営者は他分野の翻訳者である（5話）</div></a>
+  </div>
+</section>
+
+<main class="content-main">
+
+    <section class="part-section" id="prologue">
+      <div class="part-header">
+        <div class="part-label">PROLOGUE — 序 章</div>
+        <h2 class="part-title">経営機能を他分野で読む</h2>
+        <p class="part-tagline">翻訳の方法論と連載地図</p>
+        <div class="part-stats">5話 · PROLOGUE</div>
+      </div>
+      <div class="ep-list">
+      <a class="ep-item " href="ep001.html">
+        <div class="ep-item-num">01<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第1話</div>
+          <div class="ep-item-title">経営機能を「他分野で読む」とは</div>
+          <div class="ep-item-sub">経営学史 × 翻訳論</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep002.html">
+        <div class="ep-item-num">02<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第2話</div>
+          <div class="ep-item-title">経営学だけでは届かない領域</div>
+          <div class="ep-item-sub">知識社会学 × 学際研究方法論</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep003.html">
+        <div class="ep-item-num">03<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第3話</div>
+          <div class="ep-item-title">5機能と他分野マップ</div>
+          <div class="ep-item-sub">機能主義経営論 × タクソノミー論</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep004.html">
+        <div class="ep-item-num">04<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第4話</div>
+          <div class="ep-item-title">ベストプラクティスの限界</div>
+          <div class="ep-item-sub">経営理論批判 × 暗黙知論</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep005.html">
+        <div class="ep-item-num">05<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第5話</div>
+          <div class="ep-item-title">翻訳という方法論</div>
+          <div class="ep-item-sub">Translational Science × 哲学的解釈学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="part-section" id="part-i">
+      <div class="part-header">
+        <div class="part-label">PART I — マネジメント</div>
+        <h2 class="part-title">統率・組織・継承</h2>
+        <p class="part-tagline">リーダーシップ・組織変革・後継者問題</p>
+        <div class="part-stats">18話 · I</div>
+      </div>
+      <div class="ep-list">
+      <a class="ep-item " href="ep006.html">
+        <div class="ep-item-num">06<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第6話</div>
+          <div class="ep-item-title">リーダーシップは贈与の連鎖だった</div>
+          <div class="ep-item-sub">経済人類学 × 神経科学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep007.html">
+        <div class="ep-item-num">07<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第7話</div>
+          <div class="ep-item-title">組織の血液循環</div>
+          <div class="ep-item-sub">細胞生物学 × ネットワーク科学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep008.html">
+        <div class="ep-item-num">08<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第8話</div>
+          <div class="ep-item-title">撤退戦の哲学</div>
+          <div class="ep-item-sub">老荘思想 × ゲーム理論</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep009.html">
+        <div class="ep-item-num">09<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第9話</div>
+          <div class="ep-item-title">暗黙知は儀礼で渡される</div>
+          <div class="ep-item-sub">知識論 × 認知言語学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep010.html">
+        <div class="ep-item-num">10<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第10話</div>
+          <div class="ep-item-title">群れの動きと組織行動</div>
+          <div class="ep-item-sub">動物行動学 × 群知能</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep011.html">
+        <div class="ep-item-num">11<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第11話</div>
+          <div class="ep-item-title">意思決定する身体</div>
+          <div class="ep-item-sub">神経科学 × 哲学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep012.html">
+        <div class="ep-item-num">12<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第12話</div>
+          <div class="ep-item-title">オフィスは記憶の容器</div>
+          <div class="ep-item-sub">環境心理学 × 古代修辞学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep013.html">
+        <div class="ep-item-num">13<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第13話</div>
+          <div class="ep-item-title">働き方の歴史</div>
+          <div class="ep-item-sub">経済史 × 時間人類学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep014.html">
+        <div class="ep-item-num">14<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第14話</div>
+          <div class="ep-item-title">評価制度と公正世界仮説</div>
+          <div class="ep-item-sub">社会心理学 × 政治哲学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep015.html">
+        <div class="ep-item-num">15<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第15話</div>
+          <div class="ep-item-title">多様性と生態系の安定</div>
+          <div class="ep-item-sub">生態学 × 複雑系</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep016.html">
+        <div class="ep-item-num">16<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第16話</div>
+          <div class="ep-item-title">組織変革は相転移する</div>
+          <div class="ep-item-sub">複雑系物理学 × 縁起観</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep017.html">
+        <div class="ep-item-num">17<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第17話</div>
+          <div class="ep-item-title">失敗の儀礼</div>
+          <div class="ep-item-sub">文化人類学 × ナラティブ療法</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep018.html">
+        <div class="ep-item-num">18<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第18話</div>
+          <div class="ep-item-title">創造性と即興演劇</div>
+          <div class="ep-item-sub">演劇研究 × 認知心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep019.html">
+        <div class="ep-item-num">19<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第19話</div>
+          <div class="ep-item-title">後継者問題と能の伝承</div>
+          <div class="ep-item-sub">芸能史 × 進化生物学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep020.html">
+        <div class="ep-item-num">20<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第20話</div>
+          <div class="ep-item-title">コモンズの経営</div>
+          <div class="ep-item-sub">政治哲学 × 生態学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep021.html">
+        <div class="ep-item-num">21<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第21話</div>
+          <div class="ep-item-title">距離をどう保つか</div>
+          <div class="ep-item-sub">文化人類学 × 愛着理論</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep022.html">
+        <div class="ep-item-num">22<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第22話</div>
+          <div class="ep-item-title">沈黙のマネジメント</div>
+          <div class="ep-item-sub">比較宗教学 × 認知科学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep023.html">
+        <div class="ep-item-num">23<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第23話</div>
+          <div class="ep-item-title">終わりの設計</div>
+          <div class="ep-item-sub">死生学 × ハイデガー哲学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="part-section" id="part-ii">
+      <div class="part-header">
+        <div class="part-label">PART II — ファイナンス</div>
+        <h2 class="part-title">利子・通貨・リスク</h2>
+        <p class="part-tagline">投資判断・資本コスト・新しい経済学</p>
+        <div class="part-stats">18話 · II</div>
+      </div>
+      <div class="ep-list">
+      <a class="ep-item " href="ep024.html">
+        <div class="ep-item-num">24<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第24話</div>
+          <div class="ep-item-title">利子の起源</div>
+          <div class="ep-item-sub">経済史 × 比較宗教学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep025.html">
+        <div class="ep-item-num">25<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第25話</div>
+          <div class="ep-item-title">投資判断と狩猟採集</div>
+          <div class="ep-item-sub">進化心理学 × 行動経済学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item " href="ep026.html">
+        <div class="ep-item-num">26<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第26話</div>
+          <div class="ep-item-title">リスクは身体で感じる</div>
+          <div class="ep-item-sub">生理学 × 実存哲学</div>
+          <div class="ep-item-meta"><span class="ep-badge published">PUBLISHED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">27<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第27話</div>
+          <div class="ep-item-title">バランスシートの哲学</div>
+          <div class="ep-item-sub">数学史 × 構造主義</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">28<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第28話</div>
+          <div class="ep-item-title">通貨は贈与から生まれた</div>
+          <div class="ep-item-sub">経済人類学 × 言語学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">29<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第29話</div>
+          <div class="ep-item-title">流動性と河川</div>
+          <div class="ep-item-sub">水文学 × 古代ギリシア哲学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">30<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第30話</div>
+          <div class="ep-item-title">バブルと群衆</div>
+          <div class="ep-item-sub">社会心理学 × ジラール</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">31<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第31話</div>
+          <div class="ep-item-title">資本コストと時間哲学</div>
+          <div class="ep-item-sub">ベルクソン × 熱力学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">32<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第32話</div>
+          <div class="ep-item-title">損切りの神経科学</div>
+          <div class="ep-item-sub">プロスペクト理論 × ストア派</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">33<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第33話</div>
+          <div class="ep-item-title">為替と境界の人類学</div>
+          <div class="ep-item-sub">国境研究 × 言語学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">34<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第34話</div>
+          <div class="ep-item-title">ESG投資の倫理学</div>
+          <div class="ep-item-sub">環境哲学 × 先住民研究</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">35<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第35話</div>
+          <div class="ep-item-title">企業価値は物語である</div>
+          <div class="ep-item-sub">ナラティブ経済学 × ナラトロジー</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">36<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第36話</div>
+          <div class="ep-item-title">資本市場の神話</div>
+          <div class="ep-item-sub">神話論 × ユング心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">37<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第37話</div>
+          <div class="ep-item-title">配当と種子</div>
+          <div class="ep-item-sub">農学 × 進化遺伝学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">38<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第38話</div>
+          <div class="ep-item-title">暗号通貨と信頼</div>
+          <div class="ep-item-sub">ルーマン社会学 × ゲーム理論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">39<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第39話</div>
+          <div class="ep-item-title">相続の民俗学</div>
+          <div class="ep-item-sub">民俗学 × デュメジル神話学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">40<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第40話</div>
+          <div class="ep-item-title">余剰の使い方</div>
+          <div class="ep-item-sub">経済人類学 × バタイユ</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">41<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第41話</div>
+          <div class="ep-item-title">仏教経済学</div>
+          <div class="ep-item-sub">思想史 × 脱成長論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="part-section" id="part-iii">
+      <div class="part-header">
+        <div class="part-label">PART III — マーケティング</div>
+        <h2 class="part-title">物語・記号・神話</h2>
+        <p class="part-tagline">ブランド・パッケージ・口コミ・体験</p>
+        <div class="part-stats">18話 · III</div>
+      </div>
+      <div class="ep-list">
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">42<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第42話</div>
+          <div class="ep-item-title">ブランドは現代の神話</div>
+          <div class="ep-item-sub">比較神話学 × 記号学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">43<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第43話</div>
+          <div class="ep-item-title">価格は知覚される</div>
+          <div class="ep-item-sub">心理物理学 × 神経経済学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">44<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第44話</div>
+          <div class="ep-item-title">物語の構造とマーケティング</div>
+          <div class="ep-item-sub">ナラトロジー × 認知言語学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">45<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第45話</div>
+          <div class="ep-item-title">共感の神経科学</div>
+          <div class="ep-item-sub">ミラーニューロン × 現象学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">46<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第46話</div>
+          <div class="ep-item-title">パッケージは記号である</div>
+          <div class="ep-item-sub">記号論 × 美学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">47<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第47話</div>
+          <div class="ep-item-title">口コミは都市伝説</div>
+          <div class="ep-item-sub">民俗学 × 進化生物学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">48<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第48話</div>
+          <div class="ep-item-title">顧客体験の現象学</div>
+          <div class="ep-item-sub">メルロ＝ポンティ × 体験経済論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">49<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第49話</div>
+          <div class="ep-item-title">色彩と認知</div>
+          <div class="ep-item-sub">色彩心理学 × 文化人類学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">50<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第50話</div>
+          <div class="ep-item-title">店舗の音楽</div>
+          <div class="ep-item-sub">環境音響学 × 音楽人類学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">51<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第51話</div>
+          <div class="ep-item-title">ヴィジュアル人類学とブランド</div>
+          <div class="ep-item-sub">写真人類学 × パース記号学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">52<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第52話</div>
+          <div class="ep-item-title">インフルエンサーは現代の祭司</div>
+          <div class="ep-item-sub">宗教社会学 × ウェーバー</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">53<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第53話</div>
+          <div class="ep-item-title">レビュー文化と告解</div>
+          <div class="ep-item-sub">フーコー × ゴッフマン</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">54<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第54話</div>
+          <div class="ep-item-title">ノスタルジアの記憶研究</div>
+          <div class="ep-item-sub">自伝的記憶 × プルースト的記憶論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">55<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第55話</div>
+          <div class="ep-item-title">ロゴと紋章学</div>
+          <div class="ep-item-sub">中世史 × パース記号学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">56<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第56話</div>
+          <div class="ep-item-title">キャンペーンは儀礼である</div>
+          <div class="ep-item-sub">文化人類学 × 演劇論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">57<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第57話</div>
+          <div class="ep-item-title">別れの作法</div>
+          <div class="ep-item-sub">文化人類学 × 心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">58<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第58話</div>
+          <div class="ep-item-title">ブランド再生と神話の更新</div>
+          <div class="ep-item-sub">神話論 × 文学理論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">59<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第59話</div>
+          <div class="ep-item-title">集合無意識とマーケティング</div>
+          <div class="ep-item-sub">ユング × 認知科学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="part-section" id="part-iv">
+      <div class="part-header">
+        <div class="part-label">PART IV — 事業開発</div>
+        <h2 class="part-title">適応・共創・撤退</h2>
+        <p class="part-tagline">起業・新規事業・ピボット・終末期</p>
+        <div class="part-stats">18話 · IV</div>
+      </div>
+      <div class="ep-list">
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">60<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第60話</div>
+          <div class="ep-item-title">ピボットと進化生物学</div>
+          <div class="ep-item-sub">進化生物学 × 中国兵法</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">61<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第61話</div>
+          <div class="ep-item-title">共創とコモンズ</div>
+          <div class="ep-item-sub">政治哲学 × 進化人類学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">62<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第62話</div>
+          <div class="ep-item-title">起業家精神と冒険の構造</div>
+          <div class="ep-item-sub">神話学 × 心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">63<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第63話</div>
+          <div class="ep-item-title">アクセラレーターと孵化</div>
+          <div class="ep-item-sub">発生学 × 文化人類学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">64<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第64話</div>
+          <div class="ep-item-title">オープンイノベーションと菌糸体</div>
+          <div class="ep-item-sub">菌類学 × ネットワーク科学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">65<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第65話</div>
+          <div class="ep-item-title">M&Aの結婚人類学</div>
+          <div class="ep-item-sub">婚姻儀礼研究 × 心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">66<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第66話</div>
+          <div class="ep-item-title">提携と外交史</div>
+          <div class="ep-item-sub">国際関係史 × ゲーム理論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">67<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第67話</div>
+          <div class="ep-item-title">撤退の生態学</div>
+          <div class="ep-item-sub">個体数調整 × 軍事戦略</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">68<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第68話</div>
+          <div class="ep-item-title">新規事業と母体</div>
+          <div class="ep-item-sub">発生生物学 × 経営学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">69<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第69話</div>
+          <div class="ep-item-title">試行錯誤の前史</div>
+          <div class="ep-item-sub">19世紀科学史 × プラグマティズム</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">70<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第70話</div>
+          <div class="ep-item-title">プロトタイプは演劇である</div>
+          <div class="ep-item-sub">スタニスラフスキー × 認知科学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">71<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第71話</div>
+          <div class="ep-item-title">シーズと農学</div>
+          <div class="ep-item-sub">育種学 × 民俗学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">72<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第72話</div>
+          <div class="ep-item-title">仮説検証の科学哲学</div>
+          <div class="ep-item-sub">ポパー × ベイズ統計</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">73<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第73話</div>
+          <div class="ep-item-title">顧客発見はフィールドワーク</div>
+          <div class="ep-item-sub">文化人類学 × 現象学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">74<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第74話</div>
+          <div class="ep-item-title">ユニットエコノミクスと血流</div>
+          <div class="ep-item-sub">循環器学 × 生態学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">75<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第75話</div>
+          <div class="ep-item-title">アライアンスと縄張り</div>
+          <div class="ep-item-sub">動物行動学 × 経済学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">76<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第76話</div>
+          <div class="ep-item-title">ステージゲートと通過儀礼</div>
+          <div class="ep-item-sub">文化人類学 × 発達心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">77<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第77話</div>
+          <div class="ep-item-title">事業の終末期医療</div>
+          <div class="ep-item-sub">死生学 × 医療人類学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="part-section" id="part-v">
+      <div class="part-header">
+        <div class="part-label">PART V — 営業・販売</div>
+        <h2 class="part-title">弁論・関係・儀礼</h2>
+        <p class="part-tagline">提案・信頼・徒弟・接待・テリトリー</p>
+        <div class="part-stats">18話 · V</div>
+      </div>
+      <div class="ep-list">
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">78<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第78話</div>
+          <div class="ep-item-title">提案は弁論術である</div>
+          <div class="ep-item-sub">アリストテレス修辞学 × 認知心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">79<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第79話</div>
+          <div class="ep-item-title">クロージングの民俗学</div>
+          <div class="ep-item-sub">民俗学 × ゲーム理論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">80<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第80話</div>
+          <div class="ep-item-title">反論処理の弁証法</div>
+          <div class="ep-item-sub">古代ギリシア哲学 × 認知言語学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">81<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第81話</div>
+          <div class="ep-item-title">質問の技法と精神分析</div>
+          <div class="ep-item-sub">ラカン × 教育心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">82<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第82話</div>
+          <div class="ep-item-title">信頼の長距離交易</div>
+          <div class="ep-item-sub">経済人類学 × 進化生物学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">83<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第83話</div>
+          <div class="ep-item-title">紹介と互酬性</div>
+          <div class="ep-item-sub">マリノフスキ × ネットワーク分析</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">84<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第84話</div>
+          <div class="ep-item-title">オムニチャネルと多声性</div>
+          <div class="ep-item-sub">バフチン × 認知科学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">85<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第85話</div>
+          <div class="ep-item-title">営業同行と徒弟制度</div>
+          <div class="ep-item-sub">中世ギルド史 × 状況的学習論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">86<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第86話</div>
+          <div class="ep-item-title">テリトリーと縄張り</div>
+          <div class="ep-item-sub">エソロジー × 都市計画</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">87<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第87話</div>
+          <div class="ep-item-title">ロールプレイと演劇技法</div>
+          <div class="ep-item-sub">スタニスラフスキー × ゴッフマン</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">88<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第88話</div>
+          <div class="ep-item-title">CRMと社会的記憶</div>
+          <div class="ep-item-sub">アルブヴァクス × 神経科学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">89<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第89話</div>
+          <div class="ep-item-title">ノルマ文化と贖罪儀礼</div>
+          <div class="ep-item-sub">宗教学 × 心理学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">90<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第90話</div>
+          <div class="ep-item-title">値引きは贈与の変形</div>
+          <div class="ep-item-sub">モース贈与論 × 行動経済学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">91<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第91話</div>
+          <div class="ep-item-title">接待と饗応の人類学</div>
+          <div class="ep-item-sub">ホスピタリティ研究 × 比較宗教学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">92<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第92話</div>
+          <div class="ep-item-title">オンラインセールスの身体性</div>
+          <div class="ep-item-sub">現象学 × 認知科学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">93<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第93話</div>
+          <div class="ep-item-title">名刺と象徴交換</div>
+          <div class="ep-item-sub">シンボル人類学 × 中世紋章学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">94<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第94話</div>
+          <div class="ep-item-title">営業会議は告白室</div>
+          <div class="ep-item-sub">フーコー権力論 × 演劇論ブレヒト</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">95<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第95話</div>
+          <div class="ep-item-title">退職と引き継ぎの儀礼</div>
+          <div class="ep-item-sub">通過儀礼 × 経営学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section class="part-section" id="final">
+      <div class="part-header">
+        <div class="part-label">FINAL — 終 章</div>
+        <h2 class="part-title">機能横断の経営論</h2>
+        <p class="part-tagline">経営者は他分野の翻訳者である</p>
+        <div class="part-stats">5話 · FINAL</div>
+      </div>
+      <div class="ep-list">
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">96<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第96話</div>
+          <div class="ep-item-title">機能横断のパターン</div>
+          <div class="ep-item-sub">統合論 × システム思考</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">97<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第97話</div>
+          <div class="ep-item-title">経営者は他分野の翻訳者である</div>
+          <div class="ep-item-sub">翻訳論 × SECIモデル</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">98<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第98話</div>
+          <div class="ep-item-title">機能の死と新たな機能の誕生</div>
+          <div class="ep-item-sub">機能進化論 × 技術史</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">99<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第99話</div>
+          <div class="ep-item-title">AI時代の機能再考</div>
+          <div class="ep-item-sub">AI×経営 × ハイデガー哲学</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      <a class="ep-item planned" href="#" aria-disabled="true">
+        <div class="ep-item-num">100<span class="ep-item-num-total">/100</span></div>
+        <div class="ep-item-body">
+          <div class="ep-item-eyebrow">第100話</div>
+          <div class="ep-item-title">あなた自身の機能論を書く</div>
+          <div class="ep-item-sub">メタ × 省察的実践家論</div>
+          <div class="ep-item-meta"><span class="ep-badge planned">PLANNED</span></div>
+        </div>
+      </a>
+      </div>
+    </section>
+</main>
+
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-eyebrow">EMERGING FUTURE NEWSLETTER</div>
+    <h2 class="newsletter-title">新しい話の公開を、まずメールで。</h2>
+    <p class="newsletter-desc">本連載「経営のかたち」の更新通知、ミラツクの未来洞察・学術翻訳の最新情報をお届けします。配信停止はいつでも可能です。</p>
+    <form class="nl-form" id="nlForm" onsubmit="return false;">
+      <div class="nl-step active" id="nlStep1">
+        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
+        <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
+        <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
+      </div>
+      <div class="nl-step" id="nlStep2">
+        <div class="nl-row">
+          <div class="nl-field"><input type="text" id="nlName" placeholder="お名前" autocomplete="name"></div>
+          <div class="nl-field"><input type="text" id="nlOrg" placeholder="所属（任意）" autocomplete="organization"></div>
+        </div>
+        <label class="nl-consent"><input type="checkbox" id="nlConsent" checked> メールマガジン配信に同意します。配信停止はいつでも可能です。</label>
+        <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
+      </div>
+    </form>
+    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「経営のかたち」を読み解いていきましょう。</div>
+  </div>
+</section>
+
+<script>
+const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
+
+function nlNext() {
+  const v = document.getElementById('nlEmail').value.trim();
+  if (!v || !v.includes('@')) {
+    document.getElementById('nlEmail').style.borderColor = 'var(--accent)';
+    document.getElementById('nlEmail').focus();
+    setTimeout(() => document.getElementById('nlEmail').style.borderColor = '', 2000);
+    return;
+  }
+  document.getElementById('nlStep1').classList.remove('active');
+  document.getElementById('nlStep2').classList.add('active');
+  document.getElementById('nlName').focus();
+}
+async function submitNl() {
+  const name = document.getElementById('nlName').value.trim();
+  const org = document.getElementById('nlOrg').value.trim();
+  const email = document.getElementById('nlEmail').value.trim();
+  const consent = document.getElementById('nlConsent').checked;
+  const btn = document.getElementById('nlBtn');
+  if (!name) { document.getElementById('nlName').focus(); return; }
+  if (!consent) { alert('メールマガジン配信への同意が必要です'); return; }
+  btn.disabled = true;
+  btn.textContent = '登録中…';
+  try {
+    const res = await fetch(NEWSLETTER_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, org, email, source: 'keiei-no-katachi/articles' }),
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('nlForm').classList.add('hide');
+    document.getElementById('nlDone').classList.add('show');
+  } catch (e) {
+    alert('登録に失敗しました。少し時間をおいて再度お試しください。');
+    btn.disabled = false;
+    btn.textContent = '登録する';
+  }
+}
+</script>
+
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <div class="site-footer-cols">
+      <div class="site-footer-col">
+        <h4>ABOUT</h4>
+        <p><strong>経営のかたち ― 他分野が経営の機能に出会うとき</strong></p>
+        <p style="margin-top:8px;color:var(--ink-mute);">経営の主要5機能（マネジメント・ファイナンス・マーケティング・事業開発・営業販売）を、他分野の研究知で読み直す全100話連載。NPO法人ミラツク代表理事・西村勇也。</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="#newsletter">メルマガ登録</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h4>MIRA TUKU</h4>
+        <ul>
+          <li><a href="https://emerging-future.org/" target="_blank" rel="noopener">emerging-future.org</a></li>
+          <li><a href="https://github.com/yuyanishimura0312/keiei-no-katachi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-disclaimer" style="padding: 24px 0; border-top: 1px solid var(--line); font-family: var(--serif); font-size: 12.5px; line-height: 1.95; color: var(--ink-mute); letter-spacing: 0.04em;">
+      <p style="margin-bottom: 6px;"><strong style="color: var(--ink-soft);">本連載の利用について</strong></p>
+      <p>本連載で紹介する研究内容は2025年時点までの公表知見に基づくもので、その後の研究で更新される可能性があります。引用した数値・効果は集団傾向であり、個別の経営判断における結果を保証するものではありません。実務への適用は、組織の文脈に応じてご検討ください。研究の存在・年代・著者は実在検証を行っていますが、解釈や要約に誤りを発見された場合はコメント欄からご指摘ください。</p>
+    </div>
     <div class="site-footer-bottom">
-      <span>© NPO法人ミラツク / 経営のかたち</span>
-      <span>2026 — 100話連載</span>
+      <span>© 2026 NPO法人ミラツク</span>
+      <span>経営のかたち ― 他分野が経営の機能に出会うとき</span>
     </div>
   </div>
 </footer>
