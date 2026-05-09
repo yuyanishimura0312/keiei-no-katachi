@@ -15,11 +15,11 @@ ROADMAP = [
 
     # PART I マネジメント
     {"ep": "EP006", "part": "I", "title": "リーダーシップは贈与の連鎖だった", "lens1": "経済人類学", "lens2": "神経科学", "status": "draft"},
-    {"ep": "EP007", "part": "I", "title": "組織の血液循環", "lens1": "細胞生物学", "lens2": "ネットワーク科学", "status": "planned"},
-    {"ep": "EP008", "part": "I", "title": "撤退戦の哲学", "lens1": "老荘思想", "lens2": "ゲーム理論", "status": "planned"},
-    {"ep": "EP009", "part": "I", "title": "暗黙知は儀礼で渡される", "lens1": "知識論", "lens2": "認知言語学", "status": "planned"},
-    {"ep": "EP010", "part": "I", "title": "群れの動きと組織行動", "lens1": "動物行動学", "lens2": "群知能", "status": "planned"},
-    {"ep": "EP011", "part": "I", "title": "意思決定する身体", "lens1": "神経科学", "lens2": "哲学", "status": "planned"},
+    {"ep": "EP007", "part": "I", "title": "組織の血液循環", "lens1": "細胞生物学", "lens2": "ネットワーク科学", "status": "draft"},
+    {"ep": "EP008", "part": "I", "title": "撤退戦の哲学", "lens1": "老荘思想", "lens2": "ゲーム理論", "status": "draft"},
+    {"ep": "EP009", "part": "I", "title": "暗黙知は儀礼で渡される", "lens1": "知識論", "lens2": "認知言語学", "status": "draft"},
+    {"ep": "EP010", "part": "I", "title": "群れの動きと組織行動", "lens1": "動物行動学", "lens2": "群知能", "status": "draft"},
+    {"ep": "EP011", "part": "I", "title": "意思決定する身体", "lens1": "神経科学", "lens2": "哲学", "status": "draft"},
     {"ep": "EP012", "part": "I", "title": "オフィスは記憶の容器", "lens1": "環境心理学", "lens2": "古代修辞学", "status": "planned"},
     {"ep": "EP013", "part": "I", "title": "働き方の歴史", "lens1": "経済史", "lens2": "時間人類学", "status": "planned"},
     {"ep": "EP014", "part": "I", "title": "評価制度と公正世界仮説", "lens1": "社会心理学", "lens2": "政治哲学", "status": "planned"},
