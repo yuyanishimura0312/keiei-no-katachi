@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第72話 ― 仮説検証の科学哲学 | 経営のかたち</title>
+<meta name="description" content="経営のかたち第72話。ポパーの反証可能性とベイズ統計学の信念更新">
+<meta property="og:title" content="第72話 ― 仮説検証の科学哲学">
+<meta property="og:description" content="ポパーの反証可能性とベイズ統計学の信念更新">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/keiei-no-katachi/ep072.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/keiei-no-katachi/ep072.html">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">
+      <div class="site-brand-text">経営のかたち<small>KEIEI NO KATACHI / 他分野が経営の機能に出会うとき</small></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">全100話</a>
+    </nav>
+  </div>
+</header>
+
+<section class="ep-hero">
+  <div class="ep-hero-inner">
+    <div class="ep-hero-eyebrow">PART IV — 事業開発 第72話</div>
+    <div class="ep-hero-num">72.<span class="ep-hero-num-total">/ 100</span></div>
+    <h1 class="ep-hero-title">仮説検証の科学哲学</h1>
+    <p class="ep-hero-subtitle">― ポパーの反証可能性とベイズ統計学の信念更新</p>
+    <p class="ep-hero-en">The Philosophy of Science of Hypothesis Testing</p>
+    <p class="ep-hero-lead">リーン・スタートアップは「仮説を立てて検証する」を中心に置きますが、なぜ仮説検証が知識を生むのでしょうか。20世紀のカール・ポパーが定式化した「反証可能性」と、18世紀から現代まで発展してきたベイズ統計学が、仮説検証の哲学的・数学的な基盤を二方向から照らします。</p>
+    <div class="ep-hero-meta">
+      <span class="ep-hero-author"><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
+      <span class="ep-hero-date">2026年5月9日</span>
+      <span class="read-time">推定読了 約7分</span>
+      <span style="color: var(--ink-mute);">学術領域: 科学哲学 × 統計学</span>
+    </div>
+  </div>
+</section>
+
+<div class="ep-layout">
+
+  <aside class="toc-sidebar" aria-label="連載目次">
+    <div class="toc-label">FULL SERIES — 全100話</div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
+      <a class="toc-part-title" href="articles.html#prologue">経営機能を他分野で読む</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-i">PART I — マネジメント</a>
+      <a class="toc-part-title" href="articles.html#part-i">統率・組織・継承</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-ii">PART II — ファイナンス</a>
+      <a class="toc-part-title" href="articles.html#part-ii">利子・通貨・リスク</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iii">PART III — マーケティング</a>
+      <a class="toc-part-title" href="articles.html#part-iii">物語・記号・神話</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iv">PART IV — 事業開発</a>
+      <a class="toc-part-title" href="articles.html#part-iv">適応・共創・撤退</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-v">PART V — 営業・販売</a>
+      <a class="toc-part-title" href="articles.html#part-v">弁論・関係・儀礼</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
+      <a class="toc-part-title" href="articles.html#final">機能横断の経営論</a>
+    </div>
+    <div class="toc-section">
+      <span class="toc-current">第72話 ― 仮説検証の科学哲学</span>
+    </div>
+  </aside>
+
+  <article class="ep-body" id="articleBody">
+    <p>リーン・スタートアップ、アジャイル開発、デザイン思考——どの新規事業の方法論にも、「仮説を立てて検証する」が中心にあります。「お客様はXを求めているという仮説を、Yの実験で検証する」「この機能は使われるという仮説を、ABテストで確認する」「この市場には機会があるという仮説を、MVPで検証する」。けれど、なぜ仮説検証が知識を生むのか、どんな仮説が良い仮説なのか、検証結果をどう解釈するのか——これらを科学哲学的・統計学的に深く考える経営者は意外と少ない。</p>
+    <p>オーストリア・イギリスの哲学者カール・ポパー（1902-1994）は『科学的発見の論理』（1934）で、科学を非科学から区別する基準として「反証可能性（falsifiability）」を提示しました。中心命題は、科学的な仮説は「絶対に反証できない」ものではなく、「特定の観察があれば反証される」ものだということ。「すべての白鳥は白い」は、たった一羽の黒い白鳥で反証されるから、科学的な命題です。逆に「将来何かが起きる」は、何も観察しても確認も反証もできないから、科学的ではありません。</p>
+    <p>経営の仮説検証も、ポパーの基準が応用できます。「この商品は売れる」だけでは反証可能ではない（売れなかったら「もっと努力すれば売れる」と言い換えられる）。「この商品は、この市場で、3ヶ月以内に、最低500個売れる」なら反証可能です。実験設計のなかに「もしXが起きたら、仮説は否定される」を明示することが、有意義な検証の前提です。日本では西脇与作（東大）と内井惣七（京大）がポパー研究を整理しました。漠然とした仮説では、漠然とした学習しか得られません。</p>
+    <p>統計学の側から、仮説検証の精緻な道具が来ます。18世紀のイギリスの牧師トーマス・ベイズ（1701-1761）が提示した「ベイズの定理」は、新しい証拠が現れたときに、仮説への信念をどう更新するかを数学的に示します。事前確率（prior）×尤度（likelihood）÷証拠 = 事後確率（posterior）——この単純な公式が、現代の機械学習・医療診断・スパムフィルタの基盤です。日本では渡辺澄夫（東工大）と松原望（東大）がベイズ統計を整理しました。経営の仮説検証は、ベイズ的な信念更新と本質的に同じです。</p>
+    <p>経営判断としては、仮説検証を「実験の繰り返し」ではなく「ポパー的な反証可能性とベイズ的な信念更新の組み合わせ」として運営することが要になります。第一に、仮説を反証可能な形で書く。第二に、各実験の結果を、信念をどれだけ更新したかで評価する。第三に、複数の仮説を並行して評価し、データに応じて優先度を変える。優れたスタートアップは、これら三つを直観的に行っています。仮説検証の質が、組織の学習速度を決めます。</p>
+    <p>仮説検証は手法ではなく、知識生成の哲学です。ポパーとベイズが共に示すのは、知識は固定された真理ではなく、検証と更新の循環の中で生成されるという事実です。これを理解する経営者は、リーン・スタートアップを表面的な手法ではなく、深い認識論として運営できます。20世紀の科学哲学と18世紀の統計学が、現代の事業開発の土台にあるのです。</p>
+    <details class="reading-lens" open id="lens-academic-deep">
+      <summary class="reading-lens-trigger">
+        <span class="reading-lens-label">DEEPER</span>
+        <span class="reading-lens-title">別レンズで深めると — 統計学（ベイズ統計）</span>
+        <span class="reading-lens-arrow">▾</span>
+      </summary>
+      <div class="reading-lens-body">
+    <p>ベイズ統計学は、18世紀のトマス・ベイズの『偶然性の理論についての試論』（1763、死後発表）を起源としますが、20世紀後半まで主流の頻度論統計に押されてきました。1990年代以降、コンピュータ性能の向上により大規模なベイズ計算が可能になり、機械学習・人工知能の中核手法のひとつになりました。</p>
+    <p>ベイズ統計の現代的展開は、デイヴィッド・マッカイ（ケンブリッジ大）の『情報理論、推論、学習アルゴリズム』（2003）、アンドリュー・ゲルマン（コロンビア大）の『ベイズ統計データ解析』（2013）が代表的です。日本では渡辺澄夫・松原望に加え、伊庭幸人（統計数理研究所）がベイズ統計を整理しました。経営学への応用は、A/Bテスト、機械学習による顧客分析で広がっています。</p>
+    <p>ポパーの反証可能性が「科学的命題の論理的構造」を示し、ベイズ統計が「証拠による信念更新の数学的手続き」を提供する——両者が、同じ「知識生成の論理」に到達しています。両方を統合することが、経営の仮説検証の知的基盤になります。</p>
+        <div class="signal-list">
+          <div class="signal-item"><div class="signal-num">SIGNAL 01</div><p class="signal-text">Googleは年間<strong>約10,000件以上</strong>のA/Bテストを実施、ベイズ統計を活用した自動最適化を運用（Google Research 2023）。</p></div>
+          <div class="signal-item"><div class="signal-num">SIGNAL 02</div><p class="signal-text">ポパー『科学的発見の論理』の累計引用数は<strong>約45,000件</strong>、20世紀科学哲学の最重要書（Google Scholar 2024）。</p></div>
+          <div class="signal-item"><div class="signal-num">SIGNAL 03</div><p class="signal-text">ベイズ統計の関連論文は2000年代以降<strong>年率約12%</strong>で増加、機械学習の中核手法として位置づけ（Web of Science 2024）。</p></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="reading-lens" id="lens-key-reference">
+      <summary class="reading-lens-trigger">
+        <span class="reading-lens-label">KEY REFERENCE</span>
+        <span class="reading-lens-title">この回の典拠</span>
+        <span class="reading-lens-arrow">▾</span>
+      </summary>
+      <div class="reading-lens-body">
+        <ul class="ref-list">
+          <li><strong>Popper, K. R. (1934/2002). The Logic of Scientific Discovery. Routledge.</strong><span class="ref-doi">ISBN: 9780415278447</span></li>
+          <li><strong>Bayes, T. (1763/1958). An Essay towards solving a Problem in the Doctrine of Chances. Biometrika, 45(3-4), 296-315.</strong><span class="ref-doi">DOI: 10.1093/biomet/45.3-4.296</span></li>
+          <li><strong>Gelman, A., et al. (2013). Bayesian Data Analysis (3rd ed.). CRC Press.</strong><span class="ref-doi">ISBN: 9781439840955</span></li>
+          <li><strong>MacKay, D. J. C. (2003). Information Theory, Inference, and Learning Algorithms. Cambridge University Press.</strong><span class="ref-doi">ISBN: 9780521642989</span></li>
+          <li><strong>渡辺澄夫 (2012). 『ベイズ統計の理論と方法』コロナ社.</strong><span class="ref-doi">ISBN: 9784339024623</span></li>
+          <li><strong>Ries, E. (2011). The Lean Startup. Crown Business.</strong><span class="ref-doi">ISBN: 9780307887894</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <section class="ep-question">
+      <div class="ep-question-label">QUESTION FOR NEXT — 次号への問い</div>
+      <p class="ep-question-q">仮説検証が知識を生むなら、顧客発見はどんなフィールドワークなのか。次話では「顧客発見はフィールドワーク」を、文化人類学の参与観察と現象学の交差点で考えます。</p>
+      <div class="ep-question-next">
+        <span class="ep-question-next-meta">NEXT EPISODE</span>
+        <span class="ep-question-next-title">第73話「顧客発見はフィールドワーク ― 参与観察と自然的態度の括弧入れ」</span>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<nav class="ep-nav">
+  <div class="ep-nav-inner">
+    <a class="ep-nav-link" href="ep071.html">
+      <span class="ep-nav-label">← PREV</span>
+      <span class="ep-nav-title">第71話「シーズと農学」</span>
+    </a>
+    <a class="ep-nav-link next" href="ep073.html">
+      <span class="ep-nav-label">NEXT →</span>
+      <span class="ep-nav-title">第73話「顧客発見はフィールドワーク」</span>
+    </a>
+  </div>
+</nav>
+
+<section class="disclaimer">
+  <div class="disclaimer-inner">
+    本連載で紹介する研究内容は2025年時点までの公表知見に基づくもので、その後の研究で更新される可能性があります。引用した数値・効果は集団傾向であり、個別の経営判断における結果を保証するものではありません。実務への適用は、組織の文脈に応じてご検討ください。
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-bottom">
+      <span>© NPO法人ミラツク / 経営のかたち</span>
+      <span>2026 — 100話連載</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
