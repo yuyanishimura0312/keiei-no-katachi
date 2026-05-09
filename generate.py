@@ -3,8 +3,9 @@
 from pathlib import Path
 from articles_batch1 import ARTICLES_BATCH1
 from articles_batch2 import ARTICLES_BATCH2
+from articles_batch3 import ARTICLES_BATCH3
 
-ARTICLES = ARTICLES_BATCH1 + ARTICLES_BATCH2
+ARTICLES = ARTICLES_BATCH1 + ARTICLES_BATCH2 + ARTICLES_BATCH3
 
 ROOT = Path(__file__).parent
 
